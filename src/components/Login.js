@@ -1,12 +1,13 @@
-// Login.js
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../AuthProvider';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [userInfo, setUserInfo] = useState(null);
   const { loginUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,6 +25,7 @@ const Login = () => {
       setUserInfo(data);
       loginUser();
       alert('Login successful.');
+      navigate('/home'); // Navigate to the desired page after successful login
     } else {
       alert('Invalid username or password.');
     }
@@ -51,7 +53,7 @@ const Login = () => {
           <h2>User Information</h2>
           <p>Username: {userInfo.username}</p>
           <p>Email: {userInfo.email}</p>
-          {/* Добавьте дополнительную информацию пользователя здесь */}
+          {/* Add additional user information here */}
         </div>
       )}
     </div>
