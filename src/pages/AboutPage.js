@@ -1,18 +1,25 @@
-import React, { Component } from 'react'
-import Navbar  from '../components/Navbar'
-import About from '../components/About'
-import Header from '../components/Header'
+import React from 'react';
+import Navbar from '../components/Navbar';
+import About from '../components/About';
+import Header from '../components/Header';
+import { useContext } from 'react';
+import { Navigate } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider';
 
-export class AboutPage extends Component {
-  render() {
-    return (
-      <div>
-            <Header/>
-            <Navbar></Navbar>
-            <About></About>
-      </div>
-    )
+const AboutPage = () => {
+  const { isLoggedIn } = useContext(AuthContext);
+
+  if (!isLoggedIn) {
+    return <Navigate to="/login" />;
   }
-}
 
-export default AboutPage
+  return (
+    <div>
+      <Header />
+      <Navbar />
+      <About />
+    </div>
+  );
+};
+
+export default AboutPage;
