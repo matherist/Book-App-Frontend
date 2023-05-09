@@ -18,22 +18,26 @@ const Hamburger = ({ onClick, isOpen }) => {
 const Header = () => {
   // use our custom hook to get the window size
   const [width] = useWindowWidthAndHeight();
-  const [isOpen, setIsOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  const toggleMobileMenu = () => {
+    if (width <= 1000) {
+      setMobileMenuOpen(!mobileMenuOpen);
+    } else {
+      setMobileMenuOpen(false);
+    }
   };
 
   return (
     <header className="header">
       <div className="header-inner">
-      <Link to="Home" smooth={true} className="logo nav-link">
-  <img
-    src="https://simg.nicepng.com/png/small/251-2515797_no-circle-book-book-logo-png.png"
-    alt="logo"
-    style={{ width: '60px' }}
-  />
-</Link>
+        <Link to="Home" smooth={true} className="logo nav-link">
+          <img
+            src="https://simg.nicepng.com/png/small/251-2515797_no-circle-book-book-logo-png.png"
+            alt="logo"
+            style={{ width: '60px' }}
+          />
+        </Link>
 
         {/* if the width of the window is bigger than 1000px use <Navbar/>,
             else use <Hamburger/> and <SmallScreensNavbar/> */}
@@ -41,12 +45,14 @@ const Header = () => {
           <Navbar navClass="nav-big" linkClassName="nav-big-link" />
         ) : (
           <>
-            <Hamburger onClick={toggleMenu} isOpen={isOpen} />
-            {isOpen && (
+            <Hamburger onClick={toggleMobileMenu} isOpen={mobileMenuOpen} />
+            {mobileMenuOpen && (
               <SmallScreensNavbar
-                navClass="nav-small"
-                linkClassName="nav-small-link"
-              />
+              navClass={`nav-small${mobileMenuOpen ? ' mobile-menu' : ''}`}
+              linkClassName="nav-small-link"
+              setMobileMenuOpen={setMobileMenuOpen} // Pass setMobileMenuOpen as prop
+            />
+            
             )}
           </>
         )}

@@ -2,6 +2,7 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../AuthProvider';
 import { useNavigate } from 'react-router-dom';
+import './Register.css';
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -33,43 +34,48 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="First Name"
-          value={first_name}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Last Name"
-          value={last_name}
-          onChange={(e) => setLastName(e.target.value)}
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <button type="submit">Register</button>
-      </form>
-      <button onClick={() => navigate('/login')}>Already have an account? Login</button>
+    <div className="container">
+      <div className="form-wrapper">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="First Name"
+            value={first_name}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            value={last_name}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <button type="submit">Register</button>
+        </form>
+        <button onClick={() => navigate('/login')}>
+          Already have an account? Login
+        </button>
+      </div>
     </div>
   );
 };
 
 export default Register;
+

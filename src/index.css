@@ -12,9 +12,9 @@
 .product {
   display: grid;
   align-items: center;
-  border: 2px dashed rgb(250, 250, 59);
+  border: 2px dashed rgb(253, 207, 115);
   border-radius: 15px;
-  background-color: rgb(254, 254, 93);
+  background-color: #f9d490;
 }
 
 .product-item {
@@ -36,7 +36,7 @@
 
 .product-cost {
   margin-top: 5px;
-  color: #ff4a4a;
+  color: #fff04a;
   font-weight: bold;
   font-size: 18px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
@@ -239,7 +239,7 @@ footer{
 }
 .home-page {
   height: 100vh;
-  background-color: rgb(255, 255, 118);
+  background-color: #f9d490;;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -286,7 +286,7 @@ header {
   position: fixed;
   top: 0;
   height: 70px;
-  background-color: rgb(237, 250, 48);
+  background-color: #f9d490;;
   width: 100%;
   display: flex;
   align-items: flex-end;
@@ -332,21 +332,21 @@ nav {
 }
 
 #Home {
-  background-color:  rgb(246, 246, 136);
+  background-color:  #f9d490;;
 }
 
 #About {
   text-align: center;
-  background-color:  rgb(246, 246, 136);
+  background-color:  #f9d490;;
 
 }
 
 #Products {
-  background-color:  rgb(246, 246, 136);
+  background-color:  #f9d490;;
 }
 
 #Contact {
-  background-color:  rgb(246, 246, 136);
+  background-color:  #f9d490;;
 }
 
 nav ul {
@@ -391,83 +391,53 @@ nav a:hover {
   display: none;
 }
 
+
 @media (min-width: 768px) {
-  .nav-big {
-    display: flex;
-  }
-
-  nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding-bottom: 23px;
-  }
-
-  nav li {
-    padding: 0 70px;
-  }
-
-  nav a {
-    color: rgb(21, 17, 17);
-  }
-  .nav-small{
-    display: block ;
-  }
-}
-@media (max-width: 768px) {
-  .wheel-cont h1 {
-    top: 20px;
-  }
-
-  .wheel {
-    height: 45vw;
-    width: 45vw;
-    max-width: 400px;
-    max-height: 400px;
-    margin-left: 0;
-  }
-
-  nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-  }
-
-  nav li {
-    padding: 10px 0;
-  }
-
-  .nav-small {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  nav-big{
-    display: block;
-  }
-  .nav-small-link {
-    text-decoration: none;
-    color: black;
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-small-link:hover {
-    background-color: rgb(237, 250, 48);
-    color: rgb(21, 17, 17);
+    nav ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding-bottom: 23px;
+    }
+  
+    nav li {
+      padding: 0 70px;
+    }
+  
+    nav a {
+      color: rgb(21, 17, 17);
+    }
+    .nav-big {
+      display: flex;
+    }
+  
+    .nav-small {
+      display: flex;
     }
   }
-
-
+  @media (max-width: 767px) {
+    .nav-big {
+      display: none;
+    }
+  
+    .nav-small {
+      display: none;
+    }
+}
+  
+  @media (max-width: 767px) {
+    .wheel-cont h1 {
+      top: 20px;
+    }
+  
+    .wheel {
+      height: 45vw;
+      width: 45vw;
+      max-width: 400px;
+      max-height: 400px;
+      margin-left: 0;
+    }
+  }
   /*/////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /* Contact */
 
@@ -515,7 +485,7 @@ nav a:hover {
   }
   
   .submit-button {
-    background-color: #ffd700;
+    background-color: #4f4d41;
     color: #4b4b4b;
     font-size: 18px;
     font-weight: 400;
